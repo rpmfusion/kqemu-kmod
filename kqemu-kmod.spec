@@ -3,11 +3,11 @@
 # "buildforkernels newest" macro for just that build; immediately after
 # queuing that build enable the macro again for subsequent builds; that way
 # a new akmod package will only get build when a new one is actually needed
-#define buildforkernels newest
+%define buildforkernels newest
 
 Name:           kqemu-kmod
 Version:        1.3.0
-Release:        0.42%{?dist}.1
+Release:        0.42%{?dist}.2
 Summary:        The QEMU Accelerator Module (KQEMU)
 
 Group:          System Environment/Kernel
@@ -72,6 +72,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Oct 19 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 1.3.0-0.42.2
+- rebuild for latest rawhide kernel
+
 * Sat Oct 04 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info - 1.3.0-0.42.1
 - rebuild for rpm fusion
 
