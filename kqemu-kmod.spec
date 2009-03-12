@@ -3,17 +3,17 @@
 # "buildforkernels newest" macro for just that build; immediately after
 # queuing that build enable the macro again for subsequent builds; that way
 # a new akmod package will only get build when a new one is actually needed
-%define buildforkernels newest
+#define buildforkernels newest
 
 Name:           kqemu-kmod
-Version:        1.3.0
-Release:        0.42%{?dist}.18
+Version:        1.4.0
+Release:        0.1.pre1%{?dist}
 Summary:        The QEMU Accelerator Module (KQEMU)
 
 Group:          System Environment/Kernel
 License:        GPLv2
-URL:            http://fabrice.bellard.free.fr/qemu
-Source0:        http://bellard.org/qemu/kqemu-%{version}pre11.tar.gz
+URL:            http://www.nongnu.org/qemu/
+Source0:        http://www.nongnu.org/qemu/kqemu-%{version}pre1.tar.gz
 Source11:       kqemu-kmodtool-excludekernel-filterfile
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 ExclusiveArch:  i586 i686 x86_64
@@ -39,7 +39,7 @@ kmodtool  --target %{_target_cpu}  --repo rpmfusion --kmodname %{name} --filterf
 %setup -q -c -T -a 0
 
 for kernel_version  in %{?kernel_versions} ; do
-    cp -a kqemu-%{version}pre11 _kmod_build_${kernel_version%%___*}
+    cp -a kqemu-%{version}pre1 _kmod_build_${kernel_version%%___*}
 done
 
 
@@ -72,6 +72,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Mar 12 2009 kwizart < kwizart at gmail.com > - 1.4.0-0.1.pre1
+- Update to 1.4.0pre1
+
 * Sun Feb 15 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 1.3.0-0.42.18
 - rebuild for latest Fedora kernel;
 
