@@ -16,6 +16,7 @@ URL:            http://www.nongnu.org/qemu/
 Source0:        http://www.nongnu.org/qemu/kqemu-%{version}pre1.tar.gz
 Source11:       kqemu-kmodtool-excludekernel-filterfile
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+ExclusiveArch:  i686 x86_64
 
 # get the needed BuildRequires (in parts depending on what we build for)
 BuildRequires:  %{_bindir}/kmodtool
