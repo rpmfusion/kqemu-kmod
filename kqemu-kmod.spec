@@ -7,7 +7,7 @@
 
 Name:           kqemu-kmod
 Version:        1.4.0
-Release:        0.2.pre1%{?dist}.15
+Release:        0.2.pre1%{?dist}.16
 Summary:        The QEMU Accelerator Module (KQEMU)
 
 Group:          System Environment/Kernel
@@ -16,7 +16,6 @@ URL:            http://www.nongnu.org/qemu/
 Source0:        http://www.nongnu.org/qemu/kqemu-%{version}pre1.tar.gz
 Source11:       kqemu-kmodtool-excludekernel-filterfile
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-ExclusiveArch:  i586 i686 x86_64
 
 # get the needed BuildRequires (in parts depending on what we build for)
 BuildRequires:  %{_bindir}/kmodtool
@@ -72,6 +71,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Nov 22 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 1.4.0-0.2.pre1.16
+- rebuild for new kernel, disable i586 builds
+
 * Tue Nov 10 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 1.4.0-0.2.pre1.15
 - rebuild for F12 release kernel
 
