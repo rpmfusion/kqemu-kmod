@@ -7,7 +7,7 @@
 
 Name:           kqemu-kmod
 Version:        1.4.0
-Release:        0.2.pre1%{?dist}.40
+Release:        0.2.pre1%{?dist}.41
 Summary:        The QEMU Accelerator Module (KQEMU)
 
 Group:          System Environment/Kernel
@@ -72,6 +72,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Sep 01 2010 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 1.4.0-0.2.pre1.41
+- rebuild for new kernel
+
 * Fri Aug 20 2010 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 1.4.0-0.2.pre1.40
 - rebuild for new kernel
 
