@@ -7,7 +7,7 @@
 
 Name:           kqemu-kmod
 Version:        1.4.0
-Release:        0.2.pre1%{?dist}.33
+Release:        0.2.pre1%{?dist}.34
 Summary:        The QEMU Accelerator Module (KQEMU)
 
 Group:          System Environment/Kernel
@@ -72,6 +72,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Wed Nov 23 2011 Nicolas Chauvet <kwizart@gmail.com> - 1.4.0-0.2.pre1.34
+- rebuild for updated kernel
+
 * Wed Nov 02 2011 Nicolas Chauvet <kwizart@gmail.com> - 1.4.0-0.2.pre1.33
 - rebuild for updated kernel
 
